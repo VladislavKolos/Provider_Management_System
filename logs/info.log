@@ -1,0 +1,449 @@
+2024-11-26 16:11:42 INFO  o.h.validator.internal.util.Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-26 16:11:42 INFO  org.example.ApplicationKt:50 - Starting ApplicationKt using Java 17.0.13 with PID 11876 (D:\Azati\Provider_Management_System\build\classes\kotlin\main started by vladi in D:\Azati\Provider_Management_System)
+2024-11-26 16:11:42 INFO  org.example.ApplicationKt:654 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:11:49 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:11:49 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 41 ms. Found 0 JPA repository interfaces.
+2024-11-26 16:11:52 INFO  o.s.b.w.e.tomcat.TomcatWebServer:109 - Tomcat initialized with port 8080 (http)
+2024-11-26 16:11:52 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:11:52 INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-11-26 16:11:52 INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-11-26 16:11:53 INFO  o.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-11-26 16:11:53 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:11:53 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 10946 ms
+2024-11-26 16:11:54 INFO  com.zaxxer.hikari.HikariDataSource:110 - HikariCP - Starting...
+2024-11-26 16:11:56 INFO  com.zaxxer.hikari.pool.HikariPool:565 - HikariCP - Added connection org.postgresql.jdbc.PgConnection@738a39cc
+2024-11-26 16:11:56 INFO  com.zaxxer.hikari.HikariDataSource:123 - HikariCP - Start completed.
+2024-11-26 16:11:56 INFO  o.f.c.i.license.VersionPrinter:37 - Flyway Community Edition 9.22.3 by Redgate
+2024-11-26 16:11:56 INFO  o.f.c.i.license.VersionPrinter:37 - See release notes here: https://rd.gt/416ObMi
+2024-11-26 16:11:56 INFO  o.f.c.i.license.VersionPrinter:37 - 
+2024-11-26 16:11:56 INFO  org.flywaydb.core.FlywayExecutor:37 - Database: jdbc:postgresql://localhost:5432/provider_db (PostgreSQL 15.7)
+2024-11-26 16:11:57 INFO  o.f.c.i.s.JdbcTableSchemaHistory:37 - Schema history table "public"."flyway_schema_history" does not exist yet
+2024-11-26 16:11:57 INFO  o.f.core.internal.command.DbValidate:37 - Successfully validated 2 migrations (execution time 00:00.216s)
+2024-11-26 16:11:57 INFO  o.f.c.i.s.JdbcTableSchemaHistory:37 - Creating Schema History table "public"."flyway_schema_history" ...
+2024-11-26 16:11:58 INFO  o.f.core.internal.command.DbMigrate:37 - Current version of schema "public": << Empty Schema >>
+2024-11-26 16:11:58 INFO  o.f.core.internal.command.DbMigrate:37 - Migrating schema "public" to version "1 - Create Tables"
+2024-11-26 16:11:59 INFO  o.f.core.internal.command.DbMigrate:37 - Migrating schema "public" to version "1.1 - Insert Role And Status Data"
+2024-11-26 16:11:59 INFO  o.f.core.internal.command.DbMigrate:37 - Successfully applied 2 migrations to schema "public", now at version v1.1 (execution time 00:01.093s)
+2024-11-26 16:11:59 INFO  o.h.jpa.internal.util.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:12:03 INFO  org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-11-26 16:12:04 INFO  o.h.c.i.RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2024-11-26 16:12:05 INFO  o.s.o.j.p.SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:12:06 WARN  org.hibernate.orm.deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-26 16:12:09 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:12:09 ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean:426 - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [email_token_id] in table [email_token]; found [serial (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+2024-11-26 16:12:09 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:632 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [email_token_id] in table [email_token]; found [serial (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+2024-11-26 16:12:09 INFO  com.zaxxer.hikari.HikariDataSource:350 - HikariCP - Shutdown initiated...
+2024-11-26 16:12:09 INFO  com.zaxxer.hikari.HikariDataSource:352 - HikariCP - Shutdown completed.
+2024-11-26 16:12:09 INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2024-11-26 16:12:09 INFO  o.s.b.a.l.ConditionEvaluationReportLogger:82 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-26 16:12:09 ERROR o.s.boot.SpringApplication:851 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [email_token_id] in table [email_token]; found [serial (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.example.ApplicationKt.main(Application.kt:13)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [email_token_id] in table [email_token]; found [serial (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [email_token_id] in table [email_token]; found [serial (Types#INTEGER)], but expecting [bigint (Types#BIGINT)]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:165)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:152)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:75)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:295)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+2024-11-26 16:30:44 INFO  o.h.validator.internal.util.Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-26 16:30:46 INFO  org.example.ApplicationKt:50 - Starting ApplicationKt using Java 17.0.13 with PID 11128 (D:\Azati\Provider_Management_System\build\classes\kotlin\main started by vladi in D:\Azati\Provider_Management_System)
+2024-11-26 16:30:46 INFO  org.example.ApplicationKt:654 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:30:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:30:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 82 ms. Found 0 JPA repository interfaces.
+2024-11-26 16:31:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer:109 - Tomcat initialized with port 8080 (http)
+2024-11-26 16:31:00 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:31:00 INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-11-26 16:31:00 INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-11-26 16:31:01 INFO  o.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-11-26 16:31:01 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:31:01 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 15094 ms
+2024-11-26 16:31:02 INFO  com.zaxxer.hikari.HikariDataSource:110 - HikariCP - Starting...
+2024-11-26 16:31:03 INFO  com.zaxxer.hikari.pool.HikariPool:565 - HikariCP - Added connection org.postgresql.jdbc.PgConnection@2abedbbd
+2024-11-26 16:31:03 INFO  com.zaxxer.hikari.HikariDataSource:123 - HikariCP - Start completed.
+2024-11-26 16:31:03 INFO  o.f.c.i.license.VersionPrinter:37 - Flyway Community Edition 9.22.3 by Redgate
+2024-11-26 16:31:03 INFO  o.f.c.i.license.VersionPrinter:37 - See release notes here: https://rd.gt/416ObMi
+2024-11-26 16:31:03 INFO  o.f.c.i.license.VersionPrinter:37 - 
+2024-11-26 16:31:03 INFO  org.flywaydb.core.FlywayExecutor:37 - Database: jdbc:postgresql://localhost:5432/provider_db (PostgreSQL 15.7)
+2024-11-26 16:31:03 INFO  o.f.core.internal.command.DbValidate:37 - Successfully validated 2 migrations (execution time 00:00.065s)
+2024-11-26 16:31:03 INFO  o.f.core.internal.command.DbMigrate:37 - Current version of schema "public": 1.1
+2024-11-26 16:31:03 INFO  o.f.core.internal.command.DbMigrate:37 - Schema "public" is up to date. No migration necessary.
+2024-11-26 16:31:07 INFO  o.h.jpa.internal.util.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:31:09 INFO  org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-11-26 16:31:09 INFO  o.h.c.i.RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2024-11-26 16:31:10 INFO  o.s.o.j.p.SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:31:23 WARN  org.hibernate.orm.deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-26 16:31:40 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:31:42 ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean:426 - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [expiry_date] in table [email_token]; found [timestamp (Types#TIMESTAMP)], but expecting [date (Types#DATE)]
+2024-11-26 16:31:42 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:632 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [expiry_date] in table [email_token]; found [timestamp (Types#TIMESTAMP)], but expecting [date (Types#DATE)]
+2024-11-26 16:31:42 INFO  com.zaxxer.hikari.HikariDataSource:350 - HikariCP - Shutdown initiated...
+2024-11-26 16:31:42 INFO  com.zaxxer.hikari.HikariDataSource:352 - HikariCP - Shutdown completed.
+2024-11-26 16:31:42 INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2024-11-26 16:31:42 INFO  o.s.b.a.l.ConditionEvaluationReportLogger:82 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-26 16:31:42 ERROR o.s.boot.SpringApplication:851 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [expiry_date] in table [email_token]; found [timestamp (Types#TIMESTAMP)], but expecting [date (Types#DATE)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.example.ApplicationKt.main(Application.kt:13)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [expiry_date] in table [email_token]; found [timestamp (Types#TIMESTAMP)], but expecting [date (Types#DATE)]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: wrong column type encountered in column [expiry_date] in table [email_token]; found [timestamp (Types#TIMESTAMP)], but expecting [date (Types#DATE)]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateColumnType(AbstractSchemaValidator.java:165)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:152)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:75)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:295)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+2024-11-26 16:42:50 INFO  o.h.validator.internal.util.Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-26 16:42:50 INFO  org.example.ApplicationKt:50 - Starting ApplicationKt using Java 17.0.13 with PID 10760 (D:\Azati\Provider_Management_System\build\classes\kotlin\main started by vladi in D:\Azati\Provider_Management_System)
+2024-11-26 16:42:50 INFO  org.example.ApplicationKt:654 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:43:03 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:43:04 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 608 ms. Found 0 JPA repository interfaces.
+2024-11-26 16:43:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer:109 - Tomcat initialized with port 8080 (http)
+2024-11-26 16:43:10 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:43:10 INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-11-26 16:43:10 INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-11-26 16:43:11 INFO  o.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-11-26 16:43:11 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:43:11 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 20147 ms
+2024-11-26 16:43:12 INFO  com.zaxxer.hikari.HikariDataSource:110 - HikariCP - Starting...
+2024-11-26 16:43:14 INFO  com.zaxxer.hikari.pool.HikariPool:565 - HikariCP - Added connection org.postgresql.jdbc.PgConnection@11adab6d
+2024-11-26 16:43:14 INFO  com.zaxxer.hikari.HikariDataSource:123 - HikariCP - Start completed.
+2024-11-26 16:43:15 INFO  o.f.c.i.license.VersionPrinter:37 - Flyway Community Edition 9.22.3 by Redgate
+2024-11-26 16:43:15 INFO  o.f.c.i.license.VersionPrinter:37 - See release notes here: https://rd.gt/416ObMi
+2024-11-26 16:43:15 INFO  o.f.c.i.license.VersionPrinter:37 - 
+2024-11-26 16:43:15 INFO  org.flywaydb.core.FlywayExecutor:37 - Database: jdbc:postgresql://localhost:5432/provider_db (PostgreSQL 15.7)
+2024-11-26 16:43:15 INFO  o.f.core.internal.command.DbValidate:37 - Successfully validated 2 migrations (execution time 00:00.392s)
+2024-11-26 16:43:15 INFO  o.f.core.internal.command.DbMigrate:37 - Current version of schema "public": 1.1
+2024-11-26 16:43:15 INFO  o.f.core.internal.command.DbMigrate:37 - Schema "public" is up to date. No migration necessary.
+2024-11-26 16:43:16 INFO  o.h.jpa.internal.util.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:43:17 INFO  org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-11-26 16:43:17 INFO  o.h.c.i.RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2024-11-26 16:43:18 INFO  o.s.o.j.p.SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:43:19 WARN  org.hibernate.orm.deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-26 16:43:26 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:43:26 ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean:426 - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [`promotion)`]
+2024-11-26 16:43:26 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext:632 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [`promotion)`]
+2024-11-26 16:43:26 INFO  com.zaxxer.hikari.HikariDataSource:350 - HikariCP - Shutdown initiated...
+2024-11-26 16:43:26 INFO  com.zaxxer.hikari.HikariDataSource:352 - HikariCP - Shutdown completed.
+2024-11-26 16:43:26 INFO  o.a.catalina.core.StandardService:173 - Stopping service [Tomcat]
+2024-11-26 16:43:26 INFO  o.s.b.a.l.ConditionEvaluationReportLogger:82 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-26 16:43:26 ERROR o.s.boot.SpringApplication:851 - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [`promotion)`]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.example.ApplicationKt.main(Application.kt:13)
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [`promotion)`]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [`promotion)`]
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:134)
+	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97)
+	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:75)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:295)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 20 common frames omitted
+2024-11-26 16:46:14 INFO  o.h.validator.internal.util.Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-26 16:46:14 INFO  org.example.ApplicationKt:50 - Starting ApplicationKt using Java 17.0.13 with PID 10936 (D:\Azati\Provider_Management_System\build\classes\kotlin\main started by vladi in D:\Azati\Provider_Management_System)
+2024-11-26 16:46:14 INFO  org.example.ApplicationKt:654 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:46:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:46:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 178 ms. Found 0 JPA repository interfaces.
+2024-11-26 16:46:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer:109 - Tomcat initialized with port 8080 (http)
+2024-11-26 16:46:20 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:46:20 INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-11-26 16:46:20 INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-11-26 16:46:20 INFO  o.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-11-26 16:46:20 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:46:20 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 6292 ms
+2024-11-26 16:46:21 INFO  com.zaxxer.hikari.HikariDataSource:110 - HikariCP - Starting...
+2024-11-26 16:46:22 INFO  com.zaxxer.hikari.pool.HikariPool:565 - HikariCP - Added connection org.postgresql.jdbc.PgConnection@67e11bda
+2024-11-26 16:46:22 INFO  com.zaxxer.hikari.HikariDataSource:123 - HikariCP - Start completed.
+2024-11-26 16:46:23 INFO  o.f.c.i.license.VersionPrinter:37 - Flyway Community Edition 9.22.3 by Redgate
+2024-11-26 16:46:23 INFO  o.f.c.i.license.VersionPrinter:37 - See release notes here: https://rd.gt/416ObMi
+2024-11-26 16:46:23 INFO  o.f.c.i.license.VersionPrinter:37 - 
+2024-11-26 16:46:23 INFO  org.flywaydb.core.FlywayExecutor:37 - Database: jdbc:postgresql://localhost:5432/provider_db (PostgreSQL 15.7)
+2024-11-26 16:46:24 INFO  o.f.core.internal.command.DbValidate:37 - Successfully validated 2 migrations (execution time 00:00.276s)
+2024-11-26 16:46:24 INFO  o.f.core.internal.command.DbMigrate:37 - Current version of schema "public": 1.1
+2024-11-26 16:46:24 INFO  o.f.core.internal.command.DbMigrate:37 - Schema "public" is up to date. No migration necessary.
+2024-11-26 16:46:24 INFO  o.h.jpa.internal.util.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:46:25 INFO  org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-11-26 16:46:25 INFO  o.h.c.i.RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2024-11-26 16:46:26 INFO  o.s.o.j.p.SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:46:26 WARN  org.hibernate.orm.deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-26 16:46:31 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:46:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:46:33 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:46:37 WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:86 - 
+
+Using generated security password: 8d44a6de-34aa-408c-827a-5931a0f34027
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:46:37 INFO  o.s.b.a.e.web.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-11-26 16:46:37 INFO  o.s.s.web.DefaultSecurityFilterChain:54 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@693f9ab5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77ef7b2b, org.springframework.security.web.context.SecurityContextHolderFilter@14432052, org.springframework.security.web.header.HeaderWriterFilter@749054a3, org.springframework.web.filter.CorsFilter@373e09c7, org.springframework.security.web.csrf.CsrfFilter@1dade178, org.springframework.security.web.authentication.logout.LogoutFilter@6d5376b7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@d56d9f6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6bab65b6, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3f04847e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@67add4c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f9009d3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23c3f787, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a7b4b19, org.springframework.security.web.access.ExceptionTranslationFilter@7dfbdcfe, org.springframework.security.web.access.intercept.AuthorizationFilter@25c3a441]
+2024-11-26 16:46:37 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:46:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer:241 - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:46:38 INFO  org.example.ApplicationKt:56 - Started ApplicationKt in 27.749 seconds (process running for 30.029)
+2024-11-26 16:46:42 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-26 16:46:42 INFO  o.s.web.servlet.DispatcherServlet:532 - Initializing Servlet 'dispatcherServlet'
+2024-11-26 16:46:42 INFO  o.s.web.servlet.DispatcherServlet:554 - Completed initialization in 2 ms
+2024-11-26 16:46:53 WARN  o.s.b.a.mail.MailHealthIndicator:94 - Mail health check failed
+jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-aa57508e3c8sm56268166b.116 - gsmtp
+
+	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954)
+	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865)
+	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769)
+	at jakarta.mail.Service.connect(Service.java:345)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:360)
+	at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:52)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:82)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:76)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-26 16:46:53 WARN  o.s.b.a.health.HealthEndpointSupport:181 - Health contributor org.springframework.boot.actuate.mail.MailHealthIndicator (mail) took 10940ms to respond
+2024-11-26 16:47:49 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:47:49 INFO  com.zaxxer.hikari.HikariDataSource:350 - HikariCP - Shutdown initiated...
+2024-11-26 16:47:49 INFO  com.zaxxer.hikari.HikariDataSource:352 - HikariCP - Shutdown completed.
+2024-11-26 16:52:22 INFO  o.h.validator.internal.util.Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-26 16:52:22 INFO  org.example.ApplicationKt:50 - Starting ApplicationKt using Java 17.0.13 with PID 5812 (D:\Azati\Provider_Management_System\build\classes\kotlin\main started by vladi in D:\Azati\Provider_Management_System)
+2024-11-26 16:52:22 INFO  org.example.ApplicationKt:654 - No active profile set, falling back to 1 default profile: "default"
+2024-11-26 16:52:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 16:52:28 INFO  o.s.d.r.c.RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 687 ms. Found 0 JPA repository interfaces.
+2024-11-26 16:52:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer:109 - Tomcat initialized with port 8080 (http)
+2024-11-26 16:52:32 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:52:32 INFO  o.a.catalina.core.StandardService:173 - Starting service [Tomcat]
+2024-11-26 16:52:32 INFO  o.a.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-11-26 16:52:32 INFO  o.apache.jasper.servlet.TldScanner:173 - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-11-26 16:52:32 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring embedded WebApplicationContext
+2024-11-26 16:52:32 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:296 - Root WebApplicationContext: initialization completed in 10470 ms
+2024-11-26 16:52:33 INFO  com.zaxxer.hikari.HikariDataSource:110 - HikariCP - Starting...
+2024-11-26 16:52:34 INFO  com.zaxxer.hikari.pool.HikariPool:565 - HikariCP - Added connection org.postgresql.jdbc.PgConnection@6ae42248
+2024-11-26 16:52:34 INFO  com.zaxxer.hikari.HikariDataSource:123 - HikariCP - Start completed.
+2024-11-26 16:52:34 INFO  o.f.c.i.license.VersionPrinter:37 - Flyway Community Edition 9.22.3 by Redgate
+2024-11-26 16:52:34 INFO  o.f.c.i.license.VersionPrinter:37 - See release notes here: https://rd.gt/416ObMi
+2024-11-26 16:52:34 INFO  o.f.c.i.license.VersionPrinter:37 - 
+2024-11-26 16:52:34 INFO  org.flywaydb.core.FlywayExecutor:37 - Database: jdbc:postgresql://localhost:5432/provider_db (PostgreSQL 15.7)
+2024-11-26 16:52:34 INFO  o.f.core.internal.command.DbValidate:37 - Successfully validated 2 migrations (execution time 00:00.236s)
+2024-11-26 16:52:34 INFO  o.f.core.internal.command.DbMigrate:37 - Current version of schema "public": 1.1
+2024-11-26 16:52:34 INFO  o.f.core.internal.command.DbMigrate:37 - Schema "public" is up to date. No migration necessary.
+2024-11-26 16:52:35 INFO  o.h.jpa.internal.util.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 16:52:35 INFO  org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-11-26 16:52:35 INFO  o.h.c.i.RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2024-11-26 16:52:36 INFO  o.s.o.j.p.SpringPersistenceUnitInfo:87 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 16:52:37 WARN  org.hibernate.orm.deprecation:153 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-26 16:52:40 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 16:52:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:52:40 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:232 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 16:52:42 WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration:86 - 
+
+Using generated security password: 82e8befe-c360-4f71-a0d9-53a88d277320
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-11-26 16:52:42 INFO  o.s.b.a.e.web.EndpointLinksResolver:58 - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-11-26 16:52:42 INFO  o.s.s.web.DefaultSecurityFilterChain:54 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@147a8d7c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60bd11f7, org.springframework.security.web.context.SecurityContextHolderFilter@51a3e3b4, org.springframework.security.web.header.HeaderWriterFilter@37c1e2a4, org.springframework.web.filter.CorsFilter@693f9ab5, org.springframework.security.web.csrf.CsrfFilter@33c6c4f, org.springframework.security.web.authentication.logout.LogoutFilter@53fa630, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2057d8ec, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7e864a8c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@77ef7b2b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@76e56b17, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@319c77de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c9ed40, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@373e09c7, org.springframework.security.web.access.ExceptionTranslationFilter@3c739a9b, org.springframework.security.web.access.intercept.AuthorizationFilter@197d6cc9]
+2024-11-26 16:52:43 INFO  o.a.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-26 16:52:43 INFO  o.s.b.w.e.tomcat.TomcatWebServer:241 - Tomcat started on port 8080 (http) with context path ''
+2024-11-26 16:52:43 INFO  org.example.ApplicationKt:56 - Started ApplicationKt in 23.267 seconds (process running for 25.305)
+2024-11-26 16:52:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-26 16:52:44 INFO  o.s.web.servlet.DispatcherServlet:532 - Initializing Servlet 'dispatcherServlet'
+2024-11-26 16:52:44 INFO  o.s.web.servlet.DispatcherServlet:554 - Completed initialization in 4 ms
+2024-11-26 16:52:45 WARN  o.s.b.a.mail.MailHealthIndicator:94 - Mail health check failed
+jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 4fb4d7f45d1cf-5d01ffd96e4sm4983313a12.60 - gsmtp
+
+	at org.eclipse.angus.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:954)
+	at org.eclipse.angus.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:865)
+	at org.eclipse.angus.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:769)
+	at jakarta.mail.Service.connect(Service.java:345)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:480)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:360)
+	at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:52)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:82)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:76)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:587)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:828)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:705)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:704)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-26 16:58:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:650 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 16:58:33 INFO  com.zaxxer.hikari.HikariDataSource:350 - HikariCP - Shutdown initiated...
+2024-11-26 16:58:33 INFO  com.zaxxer.hikari.HikariDataSource:352 - HikariCP - Shutdown completed.

@@ -1,0 +1,41 @@
+<configuration>
+
+    <root level="info">
+        <appender-ref ref="ConsoleAppender"/>
+        <appender-ref ref="FileAppenderInfo"/>
+        <appender-ref ref="FileAppenderError"/>
+        <appender-ref ref="FileAppenderAudit"/>
+    </root>
+
+    <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}:%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FileAppenderInfo" class="ch.qos.logback.core.FileAppender">
+        <file>logs/info.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}:%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FileAppenderError" class="ch.qos.logback.core.FileAppender">
+        <file>logs/error.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}:%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FileAppenderAudit" class="ch.qos.logback.core.FileAppender">
+        <file>logs/audit.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+</configuration>
