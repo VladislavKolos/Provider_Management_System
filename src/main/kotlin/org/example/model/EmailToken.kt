@@ -29,10 +29,6 @@ class EmailToken(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    var user: User,
+    var user: User
 
-    @Id
-    @Column(name = "email_token_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-)
+) : BaseEntity()

@@ -26,11 +26,6 @@ class Promotion(
     var startDate: LocalDate,
 
     @Column(name = "end_date")
-    var endDate: LocalDate,
+    var endDate: LocalDate
 
-    @Id
-    @Column(name = "promotion_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-
-)
+) : BaseEntity()

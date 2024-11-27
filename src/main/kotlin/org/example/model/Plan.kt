@@ -24,11 +24,6 @@ class Plan(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tariff_id")
-    var tariff: Tariff,
+    var tariff: Tariff
 
-    @Id
-    @Column(name = "plan_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-
-)
+) : BaseEntity()

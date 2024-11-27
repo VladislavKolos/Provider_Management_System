@@ -9,10 +9,6 @@ class Status(
 
     @field:Size(min = 6, max = 8)
     @Column(name = "status_name")
-    var name: String,
+    var name: String
 
-    @Id
-    @Column(name = "status_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-)
+) : BaseEntity()

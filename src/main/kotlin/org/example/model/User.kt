@@ -39,15 +39,9 @@ class User(
     var emailTokens: List<EmailToken>,
 
     @OneToMany(mappedBy = "user")
-    var subscriptions: List<Subscription>,
+    var subscriptions: List<Subscription>
 
-    @Id
-    @Column(name = "user_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-
-
-) : UserDetails {
+) : BaseEntity(), UserDetails {
     override fun getAuthorities(): Collection<GrantedAuthority> = listOf(SimpleGrantedAuthority(role.name))
 
     override fun getPassword(): String = passwordField

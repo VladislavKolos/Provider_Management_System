@@ -33,11 +33,6 @@ class Tariff(
     var voiceLimit: Double,
 
     @OneToMany(mappedBy = "tariff")
-    var plans: List<Plan>,
+    var plans: List<Plan>
 
-    @Id
-    @Column(name = "tariff_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-
-)
+) : BaseEntity()

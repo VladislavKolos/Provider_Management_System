@@ -17,10 +17,6 @@ class Subscription(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "plan_id")
-    var plan: Plan,
+    var plan: Plan
 
-    @Id
-    @Column(name = "subscription_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Int? = null
-)
+) : BaseEntity()
