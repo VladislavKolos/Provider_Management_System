@@ -28,6 +28,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-aop")
 
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+
+
     runtimeOnly("org.apache.tomcat.embed:tomcat-embed-jasper")
 
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
