@@ -1,11 +1,7 @@
 package org.example.model
 
-import jakarta.persistence.Column
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.MappedSuperclass
-import java.util.UUID
+import jakarta.persistence.*
+import java.util.*
 
 @MappedSuperclass
 abstract class BaseEntity {
@@ -14,6 +10,7 @@ abstract class BaseEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", updatable = false)
     lateinit var id: UUID
+        private set
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
