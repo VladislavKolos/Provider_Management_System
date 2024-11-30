@@ -10,7 +10,7 @@ interface UserService {
 
     fun getUserByUsername(username: String): User
 
-    fun getUserByEmail(email: String): User
+    fun isUserBannedByEmail(email: String, statusName: String): Boolean
 
-    fun getUserByPhone(phone: String): User
+    fun isUserBannedByPhone(phone: String, statusName: String): Boolean
 }

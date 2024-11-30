@@ -41,13 +41,14 @@ class JwtService(
             .compact()
     }
 
-    fun isTokenValid(token: String, userDetails: UserDetails): Boolean =
-        extractUsername(token)
-            .takeIf { it == userDetails.username }
+    fun isTokenValid(token: String, userDetails: UserDetails): Boolean {
+        return extractUsername(token)
+            ?.takeIf { it == userDetails.username }
             ?.let { !isTokenExpired(token) }
             ?: false
+    }
 
-    fun extractUsername(token: String): String =
+    fun extractUsername(token: String): String? =
         extractClaim(token) { it.subject }
 
     private fun extractAllClaims(token: String): Claims {

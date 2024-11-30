@@ -8,4 +8,6 @@ import java.util.*
 interface RoleService {
 
     fun getRoleEntityById(id: UUID): Role
+
+    fun getRoleEntityByName(name: String): Role
 }

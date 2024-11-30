@@ -15,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder
 class AuthenticationConfig(
 
     private val userRepository: UserRepository
+
 ) {
 
     @Bean
@@ -29,7 +30,7 @@ class AuthenticationConfig(
     fun userDetailsService(): UserDetailsService {
         return UserDetailsService {
             userRepository.findByUsernameField(it)
-                ?: throw IllegalArgumentException("User with username: '$it' not found")
+                ?: throw NoSuchElementException("User with username: '$it' not found")
         }
     }
 

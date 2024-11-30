@@ -19,5 +19,10 @@ class StatusServiceImpl(
             ?: throw NoSuchElementException("Status with ID: $id not found")
     }
 
+    @Transactional(readOnly = true)
+    override fun getStatusEntityByName(name: String): Status {
+        return statusRepository.findStatusByName(name)
+            ?: throw NoSuchElementException("Status with name: $name not found")
 
+    }
 }

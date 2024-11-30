@@ -9,4 +9,6 @@ interface RoleRepository : JpaRepository<Role, UUID> {
     fun existsByName(name: String): Boolean
 
     fun findRoleById(id: UUID): Role?
+
+    fun findRoleByName(name: String): Role?
 }

@@ -8,4 +8,6 @@ import java.util.*
 interface StatusService {
 
     fun getStatusEntityById(id: UUID): Status
+
+    fun getStatusEntityByName(name: String): Status
 }

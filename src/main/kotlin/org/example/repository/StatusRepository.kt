@@ -11,4 +11,6 @@ interface StatusRepository : JpaRepository<Status, UUID> {
     fun existsByName(name: String): Boolean
 
     fun findStatusById(id: UUID): Status?
+
+    fun findStatusByName(name: String): Status?
 }

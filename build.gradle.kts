@@ -17,28 +17,23 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter") {
-    }
+    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-logging")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
-
 
     runtimeOnly("org.apache.tomcat.embed:tomcat-embed-jasper")
 
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
-
-//    compileOnly("org.projectlombok:lombok:1.18.32")
-//    kapt("org.projectlombok:lombok:1.18.32")
 
     runtimeOnly("org.postgresql:postgresql:42.3.1")
 
@@ -67,7 +62,7 @@ tasks.jar {
 }
 
 flyway {
-    url = "jdbc:postgresql://localhost:5432/provider_db"
-    user = "postgres"
-    password = "postgresql"
+    url = System.getenv("DATASOURCE_URL")
+    user = System.getenv("DATASOURCE_USERNAME")
+    password = System.getenv("DATASOURCE_PASSWORD")
 }

@@ -18,4 +18,10 @@ class RoleServiceImpl(
         return roleRepository.findRoleById(id)
             ?: throw NoSuchElementException("Role with ID: $id not found")
     }
+
+    @Transactional(readOnly = true)
+    override fun getRoleEntityByName(name: String): Role {
+        return roleRepository.findRoleByName(name)
+            ?: throw NoSuchElementException("Role with name: $name not found")
+    }
 }

@@ -36,10 +36,10 @@ class User(
     var status: Status,
 
     @OneToMany(mappedBy = "user")
-    var emailTokens: List<EmailToken>,
+    var emailTokens: List<EmailToken> = emptyList(),
 
     @OneToMany(mappedBy = "user")
-    var subscriptions: List<Subscription>
+    var subscriptions: List<Subscription> = emptyList()
 
 ) : BaseEntity(), UserDetails {
     override fun getAuthorities(): Collection<GrantedAuthority> = listOf(SimpleGrantedAuthority(role.name))
