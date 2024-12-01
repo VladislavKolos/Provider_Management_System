@@ -29,11 +29,41 @@ class JwtAuthenticationFilter(
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        request.getAuthorizationToken()
-            ?.takeIf { jwt -> jwtService.extractUsername(jwt) != null }
-            ?.run { handleAuthentication(this, request, response) }
-            ?: filterChain.doFilter(request, response)
+        runCatching {
+            request.getAuthorizationToken()
+                ?.let { token -> jwtService.extractUsername(token) to token }
+                ?.takeIf { (username, _) -> username != null }
+                ?.let { (username, token) ->
+                    val userDetails = userDetailsService.loadUserByUsername(username!!)
+                    val user = userService.getUserByUsername(username)
 
+                    user.takeIf {
+                        it.status.name !in listOf(
+                            ProviderConstantUtil.USER_STATUS_BANNED,
+                            ProviderConstantUtil.USER_STATUS_INACTIVE
+                        )
+                    }
+                        ?.takeIf { jwtService.isTokenValid(token, userDetails) }
+                        ?.also {
+                            val auth = UsernamePasswordAuthenticationToken(
+                                userDetails, null, userDetails.authorities
+                            ).apply {
+                                details = WebAuthenticationDetailsSource().buildDetails(request)
+                            }
+                            SecurityContextHolder.getContext().authentication = auth
+
+                        } ?: run {
+                        response.status = HttpServletResponse.SC_FORBIDDEN
+                        response.writer.write("Access Denied: User is banned or token is invalid.")
+                        return
+                    }
+                }
+        }.onFailure { exception ->
+            throw exception
+
+        }.onSuccess {
+            filterChain.doFilter(request, response)
+        }
     }
 
     private fun HttpServletRequest.getAuthorizationToken(): String? {
@@ -42,30 +72,5 @@ class JwtAuthenticationFilter(
             ?.removePrefix("Bearer ")
     }
 
-    private fun handleAuthentication(token: String, request: HttpServletRequest, response: HttpServletResponse) {
-        val username = jwtService.extractUsername(token)
-
-        username
-            ?.let { userDetailsService.loadUserByUsername(it) to userService.getUserByUsername(it) }
-            ?.takeIf { (_, user) ->
-                user.status.name !in listOf(
-                    ProviderConstantUtil.USER_STATUS_BANNED,
-                    ProviderConstantUtil.USER_STATUS_INACTIVE
-                )
-            }
-            ?.takeIf { (userDetails, _) -> jwtService.isTokenValid(token, userDetails) }
-            ?.apply {
-                val (userDetails, _) = this
-                UsernamePasswordAuthenticationToken(
-                    userDetails, null, userDetails.authorities
-                ).apply {
-                    details = WebAuthenticationDetailsSource().buildDetails(request)
-                }.also {
-                    SecurityContextHolder.getContext().authentication = it
-                }
-            } ?: response.run {
-            status = HttpServletResponse.SC_FORBIDDEN
-        }
-    }
 
 }

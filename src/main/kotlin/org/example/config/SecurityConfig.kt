@@ -29,7 +29,8 @@ class SecurityConfig(
                 csrf.disable()
             }
             authorizeHttpRequests {
-                it.requestMatchers("/auth/**").permitAll()
+                it.requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/api/client/**").hasRole("CLIENT")
                     .anyRequest().authenticated()
             }
             sessionManagement {
