@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 class UserController(
 
     private val userService: UserService
@@ -20,7 +20,7 @@ class UserController(
 
     private val logger = LoggerFactory.getLogger(UserController::class.java)
 
-    @GetMapping("/client/users/profile")
+    @GetMapping("/profile")
     fun getClientUserProfile(authentication: Authentication): ResponseEntity<UserResponseDto> {
 
         val username = authentication.name

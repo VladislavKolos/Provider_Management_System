@@ -31,14 +31,12 @@ class AuthenticationService(
     @Transactional
     fun register(request: RegisterRequestDto): AuthenticationResponseDto {
 
-        userService.isUserBannedByEmail(request.email, ProviderConstantUtil.USER_STATUS_BANNED)
-        userService.isUserBannedByPhone(request.phone, ProviderConstantUtil.USER_STATUS_BANNED)
+        userService.checkIfUserBanned(request.email, request.phone)
 
         return buildUser(request)
             .also { user -> userService.save(user) }
             .let { user -> jwtService.generateToken(user) }
             .let { jwtToken -> AuthenticationResponseDto(jwtToken) }
-
     }
 
     @Transactional

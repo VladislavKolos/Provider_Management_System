@@ -66,4 +66,15 @@ class ProviderExceptionHandler {
             .body("The requested resource was not found. Please verify your input and try again.")
     }
 
+    @ExceptionHandler(NullPointerException::class)
+    fun handleNullPointerException(ex: NullPointerException): ResponseEntity<String> {
+
+        logger.error("Null pointer exception occurred: ${ex.message}", ex)
+
+        return ResponseEntity
+            .status(HttpStatus.INTERNAL_SERVER_ERROR)
+            .body("An internal error occurred. Please try again later.")
+    }
+
+
 }

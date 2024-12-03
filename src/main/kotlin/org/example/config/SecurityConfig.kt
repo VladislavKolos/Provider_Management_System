@@ -30,7 +30,9 @@ class SecurityConfig(
             }
             authorizeHttpRequests {
                 it.requestMatchers("/api/auth/**").permitAll()
-                    .requestMatchers("/api/client/**").hasRole("CLIENT")
+                    .requestMatchers("/api/users/**").permitAll()
+                    .requestMatchers("/api/tariffs/**").permitAll()
+                    .requestMatchers("/api/plans/**").permitAll()
                     .anyRequest().authenticated()
             }
             sessionManagement {

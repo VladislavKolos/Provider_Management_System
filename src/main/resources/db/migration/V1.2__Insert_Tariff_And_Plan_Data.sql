@@ -1,0 +1,33 @@
+INSERT INTO "tariff" (id, tariff_name, description, monthly_cost, data_limit, voice_limit)
+VALUES (gen_random_uuid(), 'Basic Tariff', 'Affordable tariff with basic features.', 4.99, 50, 50),
+       (gen_random_uuid(), 'Standard Tariff', 'Balanced tariff for regular use.', 19.99, 1000, 500),
+       (gen_random_uuid(), 'Premium Tariff', 'Tariff for advanced users.', 49.99, 50000, 1000),
+       (gen_random_uuid(), 'Family Tariff', 'Shared tariff for the whole family.', 29.99, 20000, 800),
+       (gen_random_uuid(), 'Unlimited Tariff', 'Unlimited tariff for maximum freedom.', 99.99, 100000, 10000),
+       (gen_random_uuid(), 'Business Tariff', 'Tariff designed for corporate clients.', 59.99, 30000, 2000),
+       (gen_random_uuid(), 'Traveler Tariff', 'Tariff for people who travel frequently.', 14.99, 5000, 300),
+       (gen_random_uuid(), 'Social Tariff', 'Economical tariff for social groups.', 9.99, 100, 100),
+       (gen_random_uuid(), 'Gaming Tariff', 'Tariff focused on low latency and high traffic.', 39.99, 70000, 500),
+       (gen_random_uuid(), 'Remote Work Tariff', 'Tariff for working from home.', 24.99, 15000, 600);
+
+INSERT INTO "plan" (id, tariff_id, plan_name, description, start_date, end_date)
+VALUES (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Basic Tariff'), 'Plan for Basic Tariff',
+        'Monthly plan for Basic Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Standard Tariff'), 'Plan for Standard Tariff',
+        'Monthly plan for Standard Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Premium Tariff'), 'Plan for Premium Tariff',
+        'Annual plan for Premium Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Family Tariff'), 'Plan for Family Tariff',
+        'Quarterly plan for Family Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Unlimited Tariff'),
+        'Plan for Unlimited Tariff', 'Annual plan for Unlimited Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Business Tariff'), 'Plan for Business Tariff',
+        'Monthly plan for Business Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Traveler Tariff'), 'Plan for Traveler Tariff',
+        'Monthly plan for Traveler Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Social Tariff'), 'Plan for Social Tariff',
+        'Annual plan for Social Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Gaming Tariff'), 'Plan for Gaming Tariff',
+        'Annual plan for Gaming Tariff.', '2024-01-01', '2024-12-31'),
+       (gen_random_uuid(), (SELECT id FROM "tariff" WHERE tariff_name = 'Remote Work Tariff'),
+        'Plan for Remote Work Tariff', 'Quarterly plan for Remote Work Tariff.', '2024-01-01', '2024-12-31');

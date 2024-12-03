@@ -10,25 +10,25 @@ interface UserRepository : JpaRepository<User, UUID> {
 
     @Query(
         """
-        SELECT u FROM User u 
-        WHERE u.email = :email AND u.status.name = :name
+    SELECT COUNT(u) > 0 
+    FROM User u 
+    WHERE u.email = :email AND u.status.name = "banned"
     """
     )
-    fun findBannedUserByEmail(
-        @Param("email") email: String,
-        @Param("name") name: String
-    ): User?
+    fun isUserBannedByEmail(
+        @Param("email") email: String
+    ): Boolean
 
     @Query(
         """
-        SELECT u FROM User u 
-        WHERE u.phone = :phone AND u.status.name = :name
+    SELECT COUNT(u) > 0 
+    FROM User u 
+    WHERE u.phone = :phone AND u.status.name = "banned"
     """
     )
-    fun findBannedUserByPhone(
-        @Param("phone") phone: String,
-        @Param("name") statusName: String
-    ): User?
+    fun isUserBannedByPhone(
+        @Param("phone") phone: String
+    ): Boolean
 
     fun findByUsernameField(username: String): User?
 

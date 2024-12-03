@@ -45,13 +45,23 @@ dependencies {
 
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.2")
-    testImplementation("org.mockito:mockito-core:5.11.0")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.12.0")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.9.0")
+    testImplementation("io.kotest:kotest-assertions-core:5.7.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.5.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
+    testLogging {
+        events("PASSED", "FAILED", "SKIPPED")
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        showExceptions = true
+        showStackTraces = true
+        showCauses = true
+    }
 }
 
 tasks.jar {

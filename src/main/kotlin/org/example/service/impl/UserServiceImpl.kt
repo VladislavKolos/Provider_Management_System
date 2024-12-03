@@ -20,20 +20,18 @@ class UserServiceImpl(
     @Transactional(readOnly = true)
     override fun getUserByUsername(username: String): User {
         return userRepository.findByUsernameField(username)
-            ?: throw NoSuchElementException("User with this Username: $username not found")
+            ?: throw NoSuchElementException("User with this Username: $username was not found in database")
     }
 
     @Transactional(readOnly = true)
-    override fun isUserBannedByEmail(email: String, statusName: String): Boolean {
-        return userRepository.findBannedUserByEmail(email, statusName)?.let {
+    override fun checkIfUserBanned(email: String, phone: String) {
+
+        if (userRepository.isUserBannedByEmail(email)) {
             throw IllegalStateException("The email: $email is banned and cannot be used for registration")
-        } ?: true
-    }
+        }
 
-    @Transactional(readOnly = true)
-    override fun isUserBannedByPhone(phone: String, statusName: String): Boolean {
-        return userRepository.findBannedUserByPhone(phone, statusName)?.let {
-            throw NoSuchElementException("The phone: $phone is banned and cannot be used for registration")
-        } ?: true
+        if (userRepository.isUserBannedByPhone(phone)) {
+            throw IllegalStateException("The phone: $phone is banned and cannot be used for registration")
+        }
     }
 }
