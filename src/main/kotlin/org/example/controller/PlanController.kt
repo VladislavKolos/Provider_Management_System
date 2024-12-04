@@ -1,6 +1,5 @@
 package org.example.controller
 
-import jakarta.validation.constraints.NotNull
 import org.example.dto.responsedto.PlanResponseDto
 import org.example.mapper.extension.toResponseDto
 import org.example.mapper.extension.toResponseDtoPage
@@ -22,15 +21,14 @@ import java.util.*
 @RestController
 @RequestMapping("/api/plans")
 class PlanController(
-
     private val planService: PlanService
 
 ) {
+
     private val logger = LoggerFactory.getLogger(this::class.java)
 
     @GetMapping("/{id}")
-    fun getPlanById(@NotNull @PathVariable id: UUID): ResponseEntity<PlanResponseDto> {
-
+    fun getPlanById(@PathVariable id: UUID): ResponseEntity<PlanResponseDto> {
         val response = planService.getPlanById(id).toResponseDto()
         logger.info("Request received to get plan details for Client with ID: $id")
 
@@ -45,7 +43,6 @@ class PlanController(
             value = 5
         ) pageable: Pageable
     ): ResponseEntity<Page<PlanResponseDto>> {
-
         val response = planService.getAllPlans(pageable).toResponseDtoPage()
         logger.info(
             "Fetching plans for Client. Page: {}, Size: {}, Sort: {}",

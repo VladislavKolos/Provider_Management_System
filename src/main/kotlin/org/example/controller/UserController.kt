@@ -22,7 +22,6 @@ class UserController(
 
     @GetMapping("/profile")
     fun getClientUserProfile(authentication: Authentication): ResponseEntity<UserResponseDto> {
-
         val username = authentication.name
 
         val response = userService.getUserByUsername(username).toResponseDto()

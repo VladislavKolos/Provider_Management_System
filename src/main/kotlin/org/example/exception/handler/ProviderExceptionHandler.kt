@@ -18,7 +18,6 @@ class ProviderExceptionHandler {
 
     @ExceptionHandler(Exception::class)
     fun handleGeneralException(ex: Exception): ResponseEntity<String> {
-
         logger.error("An unexpected error occurred: ${ex.message}", ex)
 
         return ResponseEntity
@@ -28,7 +27,6 @@ class ProviderExceptionHandler {
 
     @ExceptionHandler(RuntimeException::class)
     fun handleRuntimeException(ex: RuntimeException): ResponseEntity<String> {
-
         logger.error("Unexpected runtime exception occurred: ${ex.message}", ex)
 
         return ResponseEntity
@@ -38,7 +36,6 @@ class ProviderExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException::class)
     fun handleConstraintViolationException(ex: ConstraintViolationException): ResponseEntity<String> {
-
         logger.error("Validation failed during entity persistence: ${ex.message}", ex)
 
         return ResponseEntity
@@ -48,7 +45,6 @@ class ProviderExceptionHandler {
 
     @ExceptionHandler(IllegalStateException::class)
     fun handleIllegalStateException(ex: IllegalStateException): ResponseEntity<String> {
-
         logger.error("Illegal state encountered: ${ex.message}", ex)
 
         return ResponseEntity
@@ -58,7 +54,6 @@ class ProviderExceptionHandler {
 
     @ExceptionHandler(NoSuchElementException::class)
     fun handleNoSuchElementException(ex: NoSuchElementException): ResponseEntity<String> {
-
         logger.error("No such element found: ${ex.message}", ex)
 
         return ResponseEntity
@@ -68,7 +63,6 @@ class ProviderExceptionHandler {
 
     @ExceptionHandler(NullPointerException::class)
     fun handleNullPointerException(ex: NullPointerException): ResponseEntity<String> {
-
         logger.error("Null pointer exception occurred: ${ex.message}", ex)
 
         return ResponseEntity

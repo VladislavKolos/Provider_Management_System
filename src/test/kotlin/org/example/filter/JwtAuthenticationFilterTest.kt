@@ -8,6 +8,7 @@ import org.example.model.User
 import org.example.service.JwtService
 import org.example.service.UserService
 import org.example.util.ProviderConstantUtil
+import org.junit.jupiter.api.AfterEach
 import org.mockito.kotlin.*
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.core.userdetails.UserDetails
@@ -19,24 +20,16 @@ import kotlin.test.Test
 import kotlin.test.assertNotNull
 
 class JwtAuthenticationFilterTest {
-
     private val jwtService: JwtService = mock()
-
     private val userDetailsService: UserDetailsService = mock()
-
     private val userService: UserService = mock()
-
     private val filter: JwtAuthenticationFilter = JwtAuthenticationFilter(jwtService, userDetailsService, userService)
-
     private val request: HttpServletRequest = mock()
-
     private val response: HttpServletResponse = mock()
-
     private val filterChain: FilterChain = mock()
 
     @Test
     fun `should authenticate valid user with valid token`() {
-
         val username = "validUser"
         val token = "validToken"
 
@@ -46,11 +39,11 @@ class JwtAuthenticationFilterTest {
 
         verify(filterChain).doFilter(request, response)
         assertNotNull(SecurityContextHolder.getContext().authentication)
+        verifyNoMoreInteractions(filterChain, response)
     }
 
     @Test
     fun `should deny access if user is banned`() {
-
         val username = "bannedUser"
         val token = "validToken"
 
@@ -64,6 +57,7 @@ class JwtAuthenticationFilterTest {
         verify(response).status = HttpServletResponse.SC_FORBIDDEN
         verify(response.writer).write("Access Denied: User is banned or token is invalid.")
         verify(filterChain, never()).doFilter(request, response)
+        verifyNoMoreInteractions(filterChain)
     }
 
     @Test
@@ -81,11 +75,11 @@ class JwtAuthenticationFilterTest {
         verify(response).status = HttpServletResponse.SC_FORBIDDEN
         verify(response.writer).write("Access Denied: User is banned or token is invalid.")
         verify(filterChain, never()).doFilter(request, response)
+        verifyNoMoreInteractions(filterChain)
     }
 
     @Test
     fun `should deny access when Authorization header is missing`() {
-
         whenever(request.getHeader("Authorization")).thenReturn(null)
 
         val writer = mock<PrintWriter>()
@@ -96,6 +90,12 @@ class JwtAuthenticationFilterTest {
         verify(response).status = HttpServletResponse.SC_FORBIDDEN
         verify(response.writer).write("Authorization header is missing or invalid")
         verify(filterChain, never()).doFilter(request, response)
+        verifyNoMoreInteractions(filterChain, jwtService, userService, userDetailsService)
+    }
+
+    @AfterEach
+    fun tearDown() {
+        SecurityContextHolder.clearContext()
     }
 
     private fun mockValidTokenBehavior(

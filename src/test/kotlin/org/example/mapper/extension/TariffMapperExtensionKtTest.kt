@@ -10,14 +10,12 @@ import java.math.BigDecimal
 import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
 import kotlin.test.assertTrue
 
 class TariffMapperExtensionKtTest {
 
     @Test
     fun `should correctly map Tariff to TariffResponseDto`() {
-
         val mockTariff = createMockTariff(
             name = "Basic Tariff",
             description = "Basic Tariff with limited data",
@@ -37,8 +35,7 @@ class TariffMapperExtensionKtTest {
     }
 
     @Test
-    fun `should throw exception when Tariff name is null`() {
-
+    fun `should handle null Tariff name`() {
         val mockTariff = createMockTariff(
             name = null,
             description = "Basic Tariff with limited data",
@@ -47,16 +44,15 @@ class TariffMapperExtensionKtTest {
             voiceLimit = 200.0
         )
 
-        assertFailsWith<NullPointerException> {
-            mockTariff.toResponseDto()
-        }
+        val result = mockTariff.toResponseDto()
+
+        assertEquals(null, result.name)
     }
 
     @Test
     fun `should map Page of Tariff to Page of TariffResponseDto`() {
-
         val mockTariffFirst = createMockTariff(
-            name = "Basic Plan",
+            name = "Basic Tariff",
             description = "Basic Tariff with limited data",
             monthlyCost = BigDecimal("10.0"),
             dataLimit = 100.0,
@@ -88,7 +84,6 @@ class TariffMapperExtensionKtTest {
 
     @Test
     fun `should handle empty Page of Tariff`() {
-
         val tariffPage = createTariffPage(
             tariffs = emptyList(),
             page = 0,
@@ -125,13 +120,7 @@ class TariffMapperExtensionKtTest {
         return mockTariff
     }
 
-    private fun createTariffPage(
-        tariffs: List<Tariff>,
-        page: Int,
-        size: Int,
-        totalElements: Long
-    ): Page<Tariff> {
-
+    private fun createTariffPage(tariffs: List<Tariff>, page: Int, size: Int, totalElements: Long): Page<Tariff> {
         return PageImpl(tariffs, PageRequest.of(page, size), totalElements)
     }
 }

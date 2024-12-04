@@ -16,11 +16,8 @@ import org.springframework.web.filter.OncePerRequestFilter
 
 @Component
 class JwtAuthenticationFilter(
-
     private val jwtService: JwtService,
-
     private val userDetailsService: UserDetailsService,
-
     private val userService: UserService
 
 ) : OncePerRequestFilter() {
@@ -59,7 +56,6 @@ class JwtAuthenticationFilter(
     }
 
     private fun denyAccess(response: HttpServletResponse, message: String) {
-
         response.status = HttpServletResponse.SC_FORBIDDEN
         response.writer.write(message)
     }

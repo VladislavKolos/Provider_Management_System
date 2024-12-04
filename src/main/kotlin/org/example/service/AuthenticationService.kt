@@ -13,24 +13,17 @@ import org.springframework.transaction.annotation.Transactional
 
 @Service
 class AuthenticationService(
-
     private val userService: UserService,
-
     private val roleService: RoleService,
-
     private val statusService: StatusService,
-
     private val passwordEncoder: PasswordEncoder,
-
     private val jwtService: JwtService,
-
     private val authenticationManager: AuthenticationManager
 
 ) {
 
     @Transactional
     fun register(request: RegisterRequestDto): AuthenticationResponseDto {
-
         userService.checkIfUserBanned(request.email, request.phone)
 
         return buildUser(request)
@@ -41,7 +34,6 @@ class AuthenticationService(
 
     @Transactional
     fun authenticate(request: AuthenticationRequestDto): AuthenticationResponseDto {
-
         return UsernamePasswordAuthenticationToken(request.username, request.password)
             .let { jwtToken ->
                 authenticationManager.authenticate(jwtToken)

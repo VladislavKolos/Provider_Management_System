@@ -11,7 +11,6 @@ import java.util.*
 
 @Service
 class TariffServiceImpl(
-
     private val tariffRepository: TariffRepository
 
 ) : TariffService {

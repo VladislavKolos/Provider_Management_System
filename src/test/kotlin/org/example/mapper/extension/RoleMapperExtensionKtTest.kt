@@ -6,7 +6,6 @@ import org.mockito.kotlin.whenever
 import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
 
 
@@ -14,7 +13,6 @@ class RoleMapperExtensionKtTest {
 
     @Test
     fun `should correctly map Role to RoleResponseDto`() {
-
         val generatedId = UUID.randomUUID()
 
         val mockRole = createMockRole(generatedId, "ROLE_ADMIN")
@@ -27,17 +25,15 @@ class RoleMapperExtensionKtTest {
     }
 
     @Test
-    fun `should throw exception when Role name is null`() {
-
+    fun `should handle null Role name`() {
         val mockRole = createMockRole(name = null)
 
-        assertFailsWith<NullPointerException> {
-            mockRole.toResponseDto()
-        }
+        val result = mockRole.toResponseDto()
+
+        assertEquals(null, result.name)
     }
 
     private fun createMockRole(id: UUID = UUID.randomUUID(), name: String?): Role {
-
         val mockRole = mock<Role>()
         whenever(mockRole.id).thenReturn(id)
         whenever(mockRole.name).thenReturn(name)

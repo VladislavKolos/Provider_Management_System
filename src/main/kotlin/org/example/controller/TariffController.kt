@@ -1,6 +1,5 @@
 package org.example.controller
 
-import jakarta.validation.constraints.NotNull
 import org.example.dto.responsedto.TariffResponseDto
 import org.example.mapper.extension.toResponseDto
 import org.example.mapper.extension.toResponseDtoPage
@@ -26,11 +25,11 @@ class TariffController(
     private val tariffService: TariffService
 
 ) {
+
     private val logger = LoggerFactory.getLogger(this::class.java)
 
     @GetMapping("/{id}")
-    fun getTariffById(@NotNull @PathVariable id: UUID): ResponseEntity<TariffResponseDto> {
-
+    fun getTariffById(@PathVariable id: UUID): ResponseEntity<TariffResponseDto> {
         val response = tariffService.getTariffById(id).toResponseDto()
         logger.info("Request received to get tariff details for Client with ID: $id")
 
@@ -45,7 +44,6 @@ class TariffController(
             value = 5
         ) pageable: Pageable
     ): ResponseEntity<Page<TariffResponseDto>> {
-
         val response = tariffService.getAllTariffs(pageable).toResponseDtoPage()
         logger.info(
             "Fetching tariffs for Client. Page: {}, Size: {}, Sort: {}",

@@ -7,12 +7,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource
 import org.springframework.orm.jpa.JpaTransactionManager
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter
-import java.util.Properties
+import java.util.*
 import javax.sql.DataSource
 
 @Configuration
 class TransactionalAndJpaConfig(
-
     private val env: Environment
 ) {
 

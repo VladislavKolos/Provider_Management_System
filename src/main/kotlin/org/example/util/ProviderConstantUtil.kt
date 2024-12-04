@@ -1,7 +1,6 @@
 package org.example.util
 
 object ProviderConstantUtil {
-
     const val USER_STATUS_ACTIVE = "active"
     const val USER_STATUS_INACTIVE = "inactive"
     const val USER_STATUS_BANNED = "banned"

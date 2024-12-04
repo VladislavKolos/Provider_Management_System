@@ -5,7 +5,7 @@ import java.util.*
 
 data class TariffResponseDto(
     val id: UUID,
-    val name: String,
+    val name: String?,
     val description: String,
     val monthlyCost: BigDecimal,
     val dataLimit: Double,

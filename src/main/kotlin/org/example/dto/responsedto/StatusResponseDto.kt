@@ -4,5 +4,5 @@ import java.util.*
 
 data class StatusResponseDto(
     val id: UUID,
-    val name: String
+    val name: String?
 )

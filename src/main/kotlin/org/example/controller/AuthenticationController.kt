@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/api/auth")
 class AuthenticationController(
-
     private val service: AuthenticationService
 
 ) {
@@ -25,7 +24,6 @@ class AuthenticationController(
 
     @PostMapping("/signup")
     fun register(@RequestBody request: RegisterRequestDto): ResponseEntity<AuthenticationResponseDto> {
-
         val response = service.register(request)
         logger.info("User registered successfully: email=${request.email}, phone=${request.phone}")
 
@@ -34,7 +32,6 @@ class AuthenticationController(
 
     @PostMapping("/login")
     fun authenticate(@RequestBody request: AuthenticationRequestDto): ResponseEntity<AuthenticationResponseDto> {
-
         val response = service.authenticate(request)
         logger.info("User authenticated successfully: username=${request.username}")
 
