@@ -9,22 +9,11 @@ springdoc:
     enabled: true
     path: /swagger-ui
 
-#jwt:
-#  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
-
 spring:
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/provider_db
-    username: postgres
-    password: postgresql
-    hikari:
-      pool-name: HikariCP
-      maximum-pool-size: 10
-      minimum-idle: 2
-      idle-timeout: 30000
-      connection-timeout: 30000
-      max-lifetime: 1800000
+
+  profiles:
+    active: dev
+
   jpa:
     hibernate:
       ddl-auto: validate
@@ -32,29 +21,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-    default-encoding: UTF-8
-#  messages:
-#    basename: lang/messages
-#    encoding: UTF-8
-  flyway:
-    enabled: true
-#    baseline-on-migrate: true
-#    baseline-version: 1
-    locations: classpath:db/migration
 
-#app:
-#  email:
-#    support: support@provider.com
+app:
+  support:
+    email: support@providermanagementsystem.com
 #    confirmation:
 #      url: http://localhost:8080/api/users/confirm-email
