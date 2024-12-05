@@ -1,13 +1,14 @@
 package org.example.repository
 
 import org.example.model.Tariff
+import org.example.repository.custom.CustomTariffRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import java.util.*
 
-interface TariffRepository : JpaRepository<Tariff, UUID> {
+interface TariffRepository : JpaRepository<Tariff, UUID>, CustomTariffRepository {
 
     fun existsByName(name: String): Boolean
 

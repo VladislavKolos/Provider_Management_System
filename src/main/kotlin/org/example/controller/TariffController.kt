@@ -11,10 +11,8 @@ import org.springframework.data.domain.Sort
 import org.springframework.data.web.PageableDefault
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.annotation.Validated
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import java.math.BigDecimal
 import java.util.*
 
 @Validated
@@ -36,7 +34,7 @@ class TariffController(
         return ResponseEntity.ok(response)
     }
 
-    @GetMapping()
+    @GetMapping
     fun getAllTariffs(
         @PageableDefault(
             sort = ["name"],
@@ -49,6 +47,30 @@ class TariffController(
             "Fetching tariffs for Client. Page: {}, Size: {}, Sort: {}",
             pageable.pageNumber, pageable.pageSize, pageable.sort
         )
+
+        return ResponseEntity.ok(response)
+    }
+
+    @GetMapping("/range")
+    fun getTariffsByCostRange(
+        @RequestParam minCost: BigDecimal,
+        @RequestParam maxCost: BigDecimal,
+        @PageableDefault(
+            sort = ["name"],
+            direction = Sort.Direction.ASC,
+            value = 5
+        ) pageable: Pageable
+    ): ResponseEntity<Page<TariffResponseDto>> {
+        val response = tariffService.getTariffsByCostRange(minCost, maxCost, pageable).toResponseDtoPage()
+        logger.info("Returning ${response.content.size} tariffs within the cost range [$minCost - $maxCost]")
+
+        return ResponseEntity.ok(response)
+    }
+
+    @GetMapping("/active-plans")
+    fun getTariffsWithActivePlans(@PageableDefault pageable: Pageable): ResponseEntity<Page<TariffResponseDto>> {
+        val response = tariffService.getTariffsWithActivePlans(pageable).toResponseDtoPage()
+        logger.info("Returning ${response.content.size} tariffs with active plans")
 
         return ResponseEntity.ok(response)
     }

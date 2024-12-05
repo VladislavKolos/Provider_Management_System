@@ -31,7 +31,10 @@ class JwtAuthenticationFilter(
         val token = request.getHeader("Authorization")
             ?.takeIf { it.startsWith("Bearer ") }
             ?.removePrefix("Bearer ")
-            ?: return denyAccess(response, "Authorization header is missing or invalid")
+        if (token == null) {
+            filterChain.doFilter(request, response)
+            return
+        }
 
         val username = jwtService.extractUsername(token)
             ?: return denyAccess(response, "Username could not be extracted from the token")

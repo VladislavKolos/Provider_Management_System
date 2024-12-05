@@ -79,17 +79,12 @@ class JwtAuthenticationFilterTest {
     }
 
     @Test
-    fun `should deny access when Authorization header is missing`() {
+    fun `should call do filter method and return when Authorization header is missing`() {
         whenever(request.getHeader("Authorization")).thenReturn(null)
-
-        val writer = mock<PrintWriter>()
-        whenever(response.writer).thenReturn(writer)
 
         invokeDoFilterInternal(request, response, filterChain)
 
-        verify(response).status = HttpServletResponse.SC_FORBIDDEN
-        verify(response.writer).write("Authorization header is missing or invalid")
-        verify(filterChain, never()).doFilter(request, response)
+        verify(filterChain).doFilter(request, response)
         verifyNoMoreInteractions(filterChain, jwtService, userService, userDetailsService)
     }
 
